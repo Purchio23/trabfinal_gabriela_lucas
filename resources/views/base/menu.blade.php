@@ -14,11 +14,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/usuario') }}">Currículo</a></li>
-                            <li><a class="dropdown-item" href="#">Serviço coprodução</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/servico1') }}">Serviço coprodução</a></li>
                             <li><a class="dropdown-item" href="#">Serviço Gestor de Tráfego</a></li>
                             <li><a class="dropdown-item" href="#">Serviço Designer Gráfico</a></li>
                         </ul>
-                    </li>                   
+                    </li>
                 </ul>
             </div>
             <div style="margin-right: 50px;">
@@ -39,7 +39,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#"> <i class='fas fa-user-cog'></i> Perfil</a>
-                           
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

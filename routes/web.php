@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\Servico1Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,8 +28,14 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('usuario', UsuarioController::class);
+    Route::resource('servico1', Servico1Controller::class);
+
+
     Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
         'usuario.search'
+    );
+    Route::post('servico1/search', [Servico1Controller::class, 'search'])->name(
+        'servico1.search'
     );
     Route::get('/profile', [ProfileController::class, 'edit'])->name(
         'profile.edit'
