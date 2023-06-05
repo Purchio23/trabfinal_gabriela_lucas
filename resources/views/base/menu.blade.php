@@ -13,10 +13,10 @@
                             Cadastrar
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/usuario') }}">Currículo</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/servico1') }}">Serviço coprodução</a></li>
-                            <li><a class="dropdown-item" href="#">Serviço Gestor de Tráfego</a></li>
-                            <li><a class="dropdown-item" href="#">Serviço Designer Gráfico</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/curriculo') }}">Currículo</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/servico1') }}">Serviços</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/reuniao') }}">Reunião</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/usuario') }}">Usuario</a></li>
                         </ul>
                     </li>
                 </ul>

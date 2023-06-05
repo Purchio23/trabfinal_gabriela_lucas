@@ -42,7 +42,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="{{ url ('resources/views/welcome.blade.php')}}">LG</a></h1>
+      <h1 class="logo"><a href="#">LG</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -53,16 +53,19 @@
           <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Time LG Agência</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Trabalhe Conosco</a></li>
+         
+          
     
           <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                    
+                    <a href="{{ url('/dashboard') }}" class="btn btn-primary text-sm text-white-700 dark:text-oange-500 underline">Dashboard</a>
+
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
@@ -88,7 +91,7 @@
           <h1>A solução para o sucesso do seu lançamento está aqui na LG Agência!</h1>
           <h2>Marque uma reunião</h2>
           <div class="d-flex">
-            <a href="#about" class="btn-get-started scrollto">Marcar agora</a>
+            <a href="{{ url('/reuniao/create') }}" class="btn-get-started scrollto">Marcar agora</a>
             
           </div>
         </div>
@@ -165,30 +168,51 @@
         <div class="section-title">
           <span>Serviços</span>
           <h2>Serviços</h2>
-          <p>Como podemos te ajudar?</p>
+          <p>ESCOLHA O SERVIÇO QUE VOCÊ DESEJA:</p>
         </div>
-
+        
         <div class="row">
+        @if (Route::has('login'))      
+                    @auth
+                        <a href="{{ url('/servico1/create') }}" >
+                    @else
+                        <a href="{{ url('login') }}" >
+                    @endauth
+            @endif
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="{{ route('register')}}">Coprodução                </a></h4>
+              <h4>Coprodução</a></h4>
               <p>ㅤㅤㅤㅤVai lançar e está perdido? Nós te ajudamos!                                                        ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          @if (Route::has('login'))      
+                    @auth
+                        <a href="{{ url('/servico1/create') }}" >
+                    @else
+                        <a href="{{ url('login') }}" >
+                    @endauth
+            @endif
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="{{ route('register')}}">Gestão de trafego</a></h4>
+              <h4>Gestão de trafego</a></h4>
               <p>Faça seu produto chegar a mais pessoas através do Facebook e Instagram!</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          @if (Route::has('login'))      
+                    @auth
+                        <a href="{{ url('/servico1/create') }}" >
+                    @else
+                        <a href="{{ url('login') }}" >
+                    @endauth
+            @endif
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="{{ route('register')}}">Desgin gráfico e acompanhamento das midias sociais</a></h4>
+              <h4>Design gráfico e social media</a></h4>
               <p>Tenha um acompanhamento completo e com um especialista para deixar suas redes cada vez mais profissionais</p>
             </div>
           </div>
@@ -223,7 +247,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="{{ url('assets/img/portfolio - idv.png')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <a href="{{ url('assets/img/criativos-pet1.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/portfolio - idv.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -233,7 +257,7 @@
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - pet 2.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -242,7 +266,7 @@
             <img src="{{ url('assets/img/criativos - pet.png')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
            
-              <a href="{{ url('assets/img/portfolio/portfolio-3.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - pet.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -252,7 +276,7 @@
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-4.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - pet 3.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -262,7 +286,7 @@
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-5.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - contabilidade.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -272,7 +296,7 @@
             <div class="portfolio-info">
               <h4>App 3</h4>
               <p>App</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-6.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - contabilidade 1.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -282,7 +306,7 @@
             <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-7.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - contabilidade 2.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -292,7 +316,7 @@
             <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-8.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - acad 1.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -302,7 +326,7 @@
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="{{ url('assets/img/portfolio/portfolio-9.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="{{ url('assets/img/criativos - acad 2.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               
             </div>
           </div>
@@ -467,7 +491,7 @@
         <div class="section-title">
           <span>Trabalhe conosco</span>
           <h2>Trabalhe conosco</h2>
-          <p>Envie seu curriculo e se junte a LG Agência!</p>
+          <p>Se junte a LG Agência!</p>
         </div>
 
         <div class="row">
@@ -498,34 +522,30 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nome</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6 mt-3 mt-md-0">
-                  <label for="name">Sobrenome</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">email</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              
-              <div class="form-group mt-3">
-                <label for="name">Curriculo</label>
-                <input type="file"  required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
+          <form   enctype="multipart/form-data" class="php-email-form">
+    @csrf
+    <div class="row">
+    <div class="col-3">
+
+    <div class="form-group col-md-6">
+            <label for="age"> </label>
+            
+        </div>
+
+    <label class="form-label">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</label><br>
+    </div>
+    <div class="text-center mt-3">
+    <a href="{{url ('curriculo')}}" class="btn btn-primary btn-lg btn-custom">Cadastre-se a vaga na equipe</a>
+
+
+    </div>
+</form>
+
+
+
+
+
+</div>
 
         </div>
 
@@ -545,14 +565,14 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>eNno</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Lucas e Gabriela</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+       
       </div>
     </div>
   </footer><!-- End Footer -->

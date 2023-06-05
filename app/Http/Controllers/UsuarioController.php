@@ -122,18 +122,21 @@ class UsuarioController extends Controller
         return \redirect('usuario')->with('success', 'Atualizado com sucesso!');
     }
 
-    function destroy($id)
-    {
-        $usuario = Usuario::findOrFail($id);
+    public function destroy($id)
+{
+    $usuario = Usuario::findOrFail($id);
 
-        //verifica se existe o arquivo vinculado ao registro e depois remove
+    if (!empty($usuario->imagem)) {
         if (Storage::disk('public')->exists($usuario->imagem)) {
             Storage::disk('public')->delete($usuario->imagem);
         }
-        $usuario->delete();
-
-        return \redirect('usuario')->with('success', 'Removido com sucesso!');
     }
+
+    $usuario->delete();
+
+    return redirect('usuario')->with('success', 'Removido com sucesso!');
+}
+
 
     function search(Request $request)
     {

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Servico1Controller;
+use App\Http\Controllers\ReuniaoController;
+use App\Http\Controllers\CurriculoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +31,8 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::resource('usuario', UsuarioController::class);
     Route::resource('servico1', Servico1Controller::class);
-
+    Route::resource('reuniao', ReuniaoController::class);
+    Route::resource('curriculo', CurriculoController::class);
 
     Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
         'usuario.search'
@@ -37,6 +40,13 @@ Route::middleware('auth')->group(function () {
     Route::post('servico1/search', [Servico1Controller::class, 'search'])->name(
         'servico1.search'
     );
+    Route::post('reuniao/search', [ReuniaoController::class, 'search'])->name(
+        'reuniao.search'
+    );
+    Route::post('curriculo/search', [CurriculoController::class, 'search'])->name(
+        'curriculo.search'
+    );
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name(
         'profile.edit'
     );

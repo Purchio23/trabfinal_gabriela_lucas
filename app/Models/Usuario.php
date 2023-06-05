@@ -24,9 +24,9 @@ class Usuario extends Model
             'telefone' => 'required | max: 20',
             'email' => ' nullable | email | max: 100',
             'categoria_id' => ' nullable',
-            'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'imagem' => 'required|image|mimes:jpeg,jpg,png|max:2048',
         ];
-    }
+    }    
 
     public static function messages(){
         return [
