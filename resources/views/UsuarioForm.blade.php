@@ -50,14 +50,13 @@
             @endphp
             <div class="col-6">
                 <br>
-                <img class="img-thumbnail" src="/storage/{{ $nome_imagem }}" width="300px" />
-                <br><br>
+                
                 <input type="file" class="form-control" name="imagem" /><br>
             </div>
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar
             </button>
-            <a href='{{ route('usuario.index') }}' class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>
+            <a href="{{ route('usuario.index') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>
                 Voltar</a> <br><br>
         </form>
     </div>

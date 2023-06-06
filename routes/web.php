@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Servico1Controller;
 use App\Http\Controllers\ReuniaoController;
-use App\Http\Controllers\CurriculoController;
+use App\Http\Controllers\VagaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('usuario', UsuarioController::class);
     Route::resource('servico1', Servico1Controller::class);
     Route::resource('reuniao', ReuniaoController::class);
-    Route::resource('curriculo', CurriculoController::class);
+    Route::resource('vaga', VagaController::class);
 
     Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
         'usuario.search'
@@ -43,8 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::post('reuniao/search', [ReuniaoController::class, 'search'])->name(
         'reuniao.search'
     );
-    Route::post('curriculo/search', [CurriculoController::class, 'search'])->name(
-        'curriculo.search'
+    Route::post('vaga/search', [VagaController::class, 'search'])->name(
+        'vaga.search'
     );
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name(

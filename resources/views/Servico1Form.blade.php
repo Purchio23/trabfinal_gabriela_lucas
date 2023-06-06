@@ -48,6 +48,7 @@
                 </select>
             </div>
             <div class="col-3">
+                <br>
                 <label class="form-label">Imagem</label><br>
                 <input type="file" name="imagem" class="form-control @error('imagem') is-invalid @enderror" />
                 @error('imagem')

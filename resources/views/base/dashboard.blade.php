@@ -8,34 +8,34 @@
                 <div class="card-body">
                     <h5 class="card-title">Listagem Currículos</h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="#" class="btn btn-primary">Clique aqui</a>
+                    <a href="{{('vaga')}}" class="btn btn-primary">Clique aqui</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem serviço de coprodução</h5>
+                    <h5 class="card-title">Listagem serviços </h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="#" class="btn btn-primary">Clique aqui</a>
+                    <a href="{{ url('/servico1') }}" class="btn btn-primary">Clique aqui</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem serviço de tráfego</h5>
+                    <h5 class="card-title">Listagem de reuniões</h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="#" class="btn btn-primary">Clique aqui</a>
+                    <a href="{{ url('/reuniao') }}" class="btn btn-primary">Clique aqui</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Listagem serviço de Designer</h5>
+                    <h5 class="card-title">Listagem de usuários </h5>
                     <p class="card-text">Descrição aqui</p>
-                    <a href="#" class="btn btn-primary">Clique aqui</a>
+                    <a href="{{ url('/usuario') }}" class="btn btn-primary">Clique aqui</a>
                 </div>
             </div>
         </div>

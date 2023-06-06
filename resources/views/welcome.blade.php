@@ -62,7 +62,7 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                     
-                    <a href="{{ url('/dashboard') }}" class="btn btn-primary text-sm text-white-700 dark:text-oange-500 underline">Dashboard</a>
+                    <a href="{{ url('/dashboard') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
 
                     @else
                         <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
@@ -535,7 +535,7 @@
     <label class="form-label">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</label><br>
     </div>
     <div class="text-center mt-3">
-    <a href="{{url ('curriculo')}}" class="btn btn-primary btn-lg btn-custom">Cadastre-se a vaga na equipe</a>
+    <a href="{{ url('/vaga/create') }}" class="btn btn-primary btn-lg btn-custom">Cadastre-se a vaga na equipe</a>
 
 
     </div>

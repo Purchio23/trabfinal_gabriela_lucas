@@ -2,8 +2,8 @@
 
 @section('conteudo')
 @section('tituloPagina', 'Listagem de Usuários')
-<h1>Listagem de Usuários</h1>
-<form action="{{ route('usuario.search') }}" method="post">
+<h1>Listagem de Currículos recebidos</h1>
+<form action="{{ route('vaga.search') }}" method="post">
     @csrf
     <div class="row">
         <div class="col-2">
@@ -19,7 +19,7 @@
             <button class="btn btn-primary" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
-            <a class="btn btn-success" href="{{ action('App\Http\Controllers\UsuarioController@create') }}"><i
+            <a class="btn btn-success" href="{{ action('App\Http\Controllers\VagaController@create') }}"><i
                     class="fa-solid fa-plus"></i> Cadastrar</a>
         </div>
     </div>
@@ -28,16 +28,16 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Nomeeeeeeeeeeeeeee</th>
+            <th scope="col">Nome</th>
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
-            <th scope="col">Categoria</th>
+            <th scope="col">Idade</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($usuarios as $item)
+        @foreach ($vagas as $item)
             @php
                 $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
             @endphp
@@ -46,13 +46,13 @@
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->categoria->nome ?? ''}}</td>
+                <td>{{ $item->idade }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
-                <td><a href="{{ action('App\Http\Controllers\UsuarioController@edit', $item->id) }}"><i
+                <td><a href="{{ action('App\Http\Controllers\VagaController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>
                     <form method="POST"
-                        action="{{ action('App\Http\Controllers\UsuarioController@destroy', $item->id) }}">
+                        action="{{ action('App\Http\Controllers\VagaController@destroy', $item->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         @csrf
                         <button type="submit" onclick='return confirm("Deseja Excluir?")' style='all: unset;'><i
